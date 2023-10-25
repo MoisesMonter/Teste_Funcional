@@ -21,6 +21,3 @@ class Poligono():
     def lado_igual_soma(self,a,b,c):
         return (a == b+c or b == a+c or c == a+b)
 
-    def identificar_triangulo(self,a,b,c):
-        y = True if (int(a)+int(b)>int(c) and int(b)+int(c)>int(a) and int(c)+int(a)>int(b)) else False
-        return y
