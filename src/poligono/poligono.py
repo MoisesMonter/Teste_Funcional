@@ -1,5 +1,9 @@
 
 class Poligono():
+
+    def um_triangulo(self,a,b,c):
+        return a + b > c and a + c > b and b + c > a
+
     def soma_angulos_internos(self,a,b,c):
         som = a + b + c
         return som == 180

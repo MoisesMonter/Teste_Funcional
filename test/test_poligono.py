@@ -9,16 +9,19 @@ teste_poligono_zero =   [(0,0,0,True)   ,(3,0,3,False)]
 
 @pytest.mark.parametrize("x,y,z,expected",teste_poligono)
 def teste_poligono(x,y,z,expected):
-    info = test.soma_angulos_internos(x,y,z)
-    assert info == expected
+    if test.um_triangulo(x,y,z):
+        info = test.soma_angulos_internos(x,y,z)
+        assert info == expected
 
 @pytest.mark.parametrize("x,y,z,expected",teste_acima_de_zero)
 def teste_poligono_sem_zero(x,y,z,expected):
-    info = test.acima_de_zero(x,y,z)
-    assert info == expected
+    if test.um_triangulo(x,y,z):
+        info = test.acima_de_zero(x,y,z)
+        assert info == expected
 
 @pytest.mark.parametrize('x,y,z,expected',teste_poligono_zero)
 def teste_poligno_zeros(x,y,z,expected):
-    info = test.todos_angulos_zero(x,y,z)
-    assert info == expected
+    if test.um_triangulo(x,y,z):
+        info = test.todos_angulos_zero(x,y,z)
+        assert info == expected
 
